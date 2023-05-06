@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('../partials/head'); %>
+  <%- include('../partials/header', {variant: 'compact'}); %> <!-- Includes the contents of header.ejs partial with a "compact" variant -->
 </head>
 <body class="container">
 
 <header>
-  <%- include('../partials/header', {variant: 'compact'}); %>
+  <%- include('../partials/header'); %> <!-- Includes the contents of header.ejs partial -->
 </header>
 
 <main>
@@ -27,7 +27,7 @@
 </main>
 
 <footer>
-  <%- include('../partials/footer'); %>
+  <%- include('../partials/footer'); %>  <!-- Includes the contents of footer.ejs partial -->
 </footer>
 
 </body>

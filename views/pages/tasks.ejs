@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %> <!-- Includes the contents of head.ejs partial -->
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %> <!-- Includes the contents of header.ejs partial -->
+</header>
+
+<main>
+  <p><%= message %></p>  <!-- Prints the value of the message variable -->
+  <div class="jumbotron">
+    <% if (tasks.length > 0) { %> <!-- Checks if tasks array has at least one task -->
+      <table class="table"
+        <tr><th>Name</th><th>Completed</th><th colspan="2"></th></tr>
+        <% tasks.forEach(function(task){ %>
+          <tr><td><%= task.name %></td><td><%= task.completed %></td> <!-- Loops through each task in the tasks array -->
+            <td><a href=<%= "/tasks/edit/" + task.id %>  class="btn btn-primary">Edit</a></td> <!-- Links to edit task page with task id in URL -->
+            <td><a href=<%= "/tasks/delete/" + task.id %>  class="btn btn-primary">Delete</a></td> <!-- Links to delete task page with task id in URL -->
+          </tr>
+        <% }) %>
+      </table>
+    <% } else { %> <!-- Executes if tasks array is empty -->
+      <h2>There are no tasks to display.</h2>
+    <% } %>
+    <a href="/tasks/add" class="btn btn-primary">Add a Task</a>  <!-- Links to add new task page -->
+  </div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>  <!-- Includes the contents of footer.ejs partial -->
+</footer>
+
+</body>
+</html>
