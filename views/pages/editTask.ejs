@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %> <!-- Including the head partial -->
+</head>
+
+<body class="container">
+
+  <header>
+    <%- include('../partials/header'); %> <!-- Including the header partial -->
+  </header>
+
+  <main>
+    <p>
+      <%= message %> <!-- Displaying a message passed in from the controller -->
+    </p>
+    <form action=<%= "/tasks/update/" + task.id %> method="post"> <!-- Setting the action for the form to update the task -->
+      <label for="name">Name:</label> <br>
+      <input name="name" value="<%=task.name %>"><br> <!-- Setting the value of the name field to the task name -->
+      <label for="complete">Completed: </label>
+      <% if (task.completed) { %> <!-- Checking if the task is completed -->
+        <input type="checkbox" name="complete" value="true" checked><br><br> <!-- Checking the checkbox if the task is completed -->
+        <% } else { %>
+          <input type="checkbox" name="complete" value="false"><br><br>  <!-- Unchecking the checkbox if the task is not completed -->
+          <% } %>
+            <button type="submit">Update</button> <!-- Submitting the form to update the task -->
+    </form>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer'); %> <!-- Including the footer partial -->
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %> <!-- Include the head partial -->
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %> <!-- Include the header partial -->
+</header>
+
+<main>
+  <p><%= message %></p> <!-- Display a message from the server-side code -->
+  <!-- Create a form to add a new task -->
+<form action="/tasks" method="post">
+  <label for="name">Name:</label><br>
+  <input name="name"><br>
+  <label for="complete">Completed: </label>
+  <input type="checkbox" name="complete" value="true"><br><br>
+  <button type="submit">Add</button>
+</form>
+  </div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %> <!-- Include the footer partial -->
+</footer>
+
+</body>
+</html>

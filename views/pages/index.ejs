@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('../partials/head'); %>
+  <%- include('../partials/head'); %> <!-- Includes the contents of head.ejs partial -->
 </head>
 <body class="container">
 
 <header>
-  <%- include('../partials/header'); %>
+  <%- include('../partials/header'); %>  <!-- Includes the contents of header.ejs partial -->
 </header>
 
 <main>
@@ -15,22 +15,22 @@
     <p>Welcome to templating using EJS</p>
 
     <h2>Variable</h2>
-    <p><%= tagline %></p>
+    <p><%= tagline %></p> <!-- Prints the value of the tagline variable -->
 
     <ul>
-      <% mascots.forEach(function(mascot) { %>
+      <% mascots.forEach(function(mascot) { %>  <!-- Loops through each mascot in the mascots array -->
         <li>
-          <strong><%= mascot.name %></strong>
-          representing <%= mascot.organization %>,
-          born <%= mascot.birth_year %>
+          <strong><%= mascot.name %></strong> <!-- Prints the name of the mascot -->
+          representing <%= mascot.organization %>, <!-- Prints the organization represented by the mascot -->
+          born <%= mascot.birth_year %> <!-- Prints the birth year of the mascot -->
         </li>
-      <% }); %>
+      <% }); %>  <!-- Ends the loop through the mascots array -->
     </ul>
   </div>
 </main>
 
 <footer>
-  <%- include('../partials/footer'); %>
+  <%- include('../partials/footer'); %>  <!-- Includes the contents of footer.ejs partial -->
 </footer>
 
 </body>
