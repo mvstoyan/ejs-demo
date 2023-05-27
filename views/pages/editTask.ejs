@@ -17,13 +17,9 @@
     </p>
     <form action=<%= "/tasks/update/" + task.id %> method="post"> <!-- Setting the action for the form to update the task -->
       <label for="name">Name:</label> <br>
-      <input name="name" value="<%=task.name %>"><br> <!-- Setting the value of the name field to the task name -->
+      <input name="name" value="<%=task.name %>"><br>
       <label for="complete">Completed: </label>
-      <% if (task.completed) { %> <!-- Checking if the task is completed -->
-        <input type="checkbox" name="complete" value="true" checked><br><br> <!-- Checking the checkbox if the task is completed -->
-        <% } else { %>
-          <input type="checkbox" name="complete" value="false"><br><br>  <!-- Unchecking the checkbox if the task is not completed -->
-          <% } %>
+      <input type="checkbox" name="complete" value="true" <%= task.completed ? "checked" : "" %>><br><br>
             <button type="submit">Update</button> <!-- Submitting the form to update the task -->
     </form>
     </div>

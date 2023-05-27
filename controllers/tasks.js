@@ -54,7 +54,9 @@ const updateTask = async (req, res) => {
     try {
       if (req.body.complete) {  // If the task is marked as complete, set the 'completed' field to true
         req.body.completed = true;
-      }
+      } else {
+      req.body.completed = false;
+    }
       task = await Task.findById(req.params.id);  // Find the task to be updated
       await Task.findByIdAndUpdate(req.params.id, req.body, {  // Update the task and redirect to the task list page
         runValidators: true,
